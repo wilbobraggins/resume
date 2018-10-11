@@ -190,3 +190,11 @@ a {
 a:hover, a:focus, a:active {
   color: #49414e;
 }
+
+#strike: {
+  position: absolute;
+  top: 50%;
+  left: 0;
+  border-bottom: 1px solid #111;
+  width: 100%
+}
