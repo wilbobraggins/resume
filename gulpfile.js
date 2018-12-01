@@ -52,4 +52,5 @@ gulp.task('build', ['vendor'], function() {
     "fontmiz/**/*",
     "vendor/**/*"
   ]
+   gulp.src(paths, { base: '.' }).pipe(gulp.dest(dist))
 });
