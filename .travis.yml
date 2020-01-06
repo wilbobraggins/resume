@@ -1,0 +1,23 @@
+sudo:          false
+language:      node_js
+node_js:
+  - "node"
+install:       npm install
+script:
+  - npm test
+  - gulp
+cache:
+  directories:
+    - node_modules
+
+deploy:
+  provider: s3
+  access_key_id: AKIAI5UZNPRIDPBCOHBQ
+  secret_access_key: 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
+  bucket: williamresume
+  acl: public_read
+  skip_cleanup: true
+  local_dir: build
+branches:
+  only:
+    - master

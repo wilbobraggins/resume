@@ -1,3 +1,3 @@
 #!/bin/sh
 
-aws s3 sync dist s3://williamresume
+s3cmd sync ~/resume-portfolio/dist --skip-existing s3://williamresume

@@ -47,6 +47,17 @@ p.lead {
   font-weight: 400;
 }
 
+#pic {
+    position: relative;
+    float: left;
+    width:  100px;
+    height: 100px;
+    background-position: 50% 50%;
+    background-repeat:   no-repeat;
+    background-size:     cover;
+    padding-top: 2.5%;
+}
+
 .subheading {
   text-transform: uppercase;
   font-weight: 500;
