@@ -13,6 +13,7 @@ blocks:
             - checkout
             - cache restore
             - npm install
+            - npm install --save-dev gulp-install
             - cache store
   - name: Build site
     task:
@@ -21,7 +22,7 @@ blocks:
           commands:
             - checkout
             - cache restore
-            - 'npm run build:all'
+            - gulp build
             - cache store website-build public
 promotions:
   - name: Production deploy
