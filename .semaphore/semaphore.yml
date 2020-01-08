@@ -12,6 +12,4 @@ blocks:
       jobs:
         - name: Copy to S3
           commands:
-            - checkout
-            - cache restore website-build
             - 'aws s3 sync ~/resume-portfolio/ --skip-existing s3://williamresume'
