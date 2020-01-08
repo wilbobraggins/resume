@@ -13,5 +13,4 @@ blocks:
         - name: Copy to S3
           commands:
             - checkout
-            - apt install s3cmd
-            - 's3cmd sync ~/resume-portfolio --skip-existing s3://williamresume'
+            - 'aws s3 sync "~/resume-portfolio" "s3://williamresume"'
