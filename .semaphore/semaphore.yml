@@ -14,4 +14,4 @@ blocks:
           commands:
             - checkout
             - cache restore website-build
-            - 'aws s3 sync "/" "s3://williamresume"
+            - 'aws s3 sync "/" "s3://williamresume"'
