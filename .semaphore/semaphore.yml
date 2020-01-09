@@ -13,4 +13,6 @@ blocks:
         - name: Copy to S3
           commands:
             - checkout
+            - pwd
+            - cd /
             - 'aws s3 sync /resume-portfolio  "s3://williamresume"'
