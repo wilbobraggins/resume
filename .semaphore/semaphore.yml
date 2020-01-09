@@ -14,5 +14,4 @@ blocks:
           commands:
             - checkout
             - pwd
-            - cd /
-            - 'aws s3 sync /resume-portfolio  "s3://williamresume"'
+            - 'aws s3 sync /resume  "s3://williamresume"'
