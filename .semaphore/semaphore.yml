@@ -14,4 +14,4 @@ blocks:
           commands:
             - checkout
             - pwd
-            - 'aws s3 sync /resume  "s3://williamresume"'
+            - 'aws s3 sync "/home/semaphore/resume" "s3://williamresume"'
