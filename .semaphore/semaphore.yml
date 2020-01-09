@@ -13,4 +13,4 @@ blocks:
         - name: Copy to S3
           commands:
             - checkout
-            - 'aws s3 sync "/resume" "s3://williamresume"'
+            - 'aws s3 sync  "s3://williamresume"'
