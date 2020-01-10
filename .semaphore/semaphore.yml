@@ -12,9 +12,9 @@ blocks:
           commands:
             - checkout
             - cache restore
-            - npm install
-            - npm install --global gulp-cli
-            - npm install --save-dev gulp
+            - 'apt-get update '
+            - 'apt-get install nodejs '
+            - 'npm install -g gulp '
             - cache store
   - name: Build site
     task:
