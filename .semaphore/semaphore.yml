@@ -5,22 +5,14 @@ agent:
     type: e1-standard-2
     os_image: ubuntu1804
 blocks:
-  - name: Install dependencies
+  - name: Deploy
     task:
+      secrets:
+        - name: aws-website
       jobs:
-        - name: npm install
+        - name: Copy to S3
           commands:
             - checkout
-            - cache restore
-            - 'sudo apt-get update '
-            - 'sudo apt-get install nodejs '
-            - 'npm install -g gulp '
-            - cache store
-  - name: Build site
-    task:
-      jobs:
-        - name: Build
-          commands:
-            - checkout
-            - cache restore
-            - gulp build
+            - cache restore website-build
+            - pwd
+            - 'aws s3 sync "public" "s3://bucket-name" --acl "public-read"'
