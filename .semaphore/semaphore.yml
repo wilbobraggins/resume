@@ -5,12 +5,29 @@ agent:
     type: e1-standard-2
     os_image: ubuntu1804
 blocks:
-  - name: Deploy
+  - name: Install dependencies
     task:
-      secrets:
-        - name: aws-secret
       jobs:
-        - name: Copy to S3
+        - name: npm install
           commands:
             - checkout
-            - 'aws s3 sync "/home/semaphore/resume" "s3://williamresume"'
+            - cache restore
+            - npm install
+            - npm install --global gulp-cli
+            - npm install --save-dev gulp
+            - cache store
+  - name: Build site
+    task:
+      jobs:
+        - name: Build
+          commands:
+            - checkout
+            - cache restore
+            - gulp build
+promotions:
+  - name: Production deploy
+    pipeline_file: production-deploy.yml
+    auto_promote_on:
+      - result: passed
+        branch:
+          - masterversion: v1.0
