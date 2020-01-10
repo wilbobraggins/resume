@@ -12,8 +12,8 @@ blocks:
           commands:
             - checkout
             - cache restore
-            - 'apt-get update '
-            - 'apt-get install nodejs '
+            - 'sudo apt-get update '
+            - 'sudo apt-get install nodejs '
             - 'npm install -g gulp '
             - cache store
   - name: Build site
