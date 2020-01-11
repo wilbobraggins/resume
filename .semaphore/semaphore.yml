@@ -15,4 +15,6 @@ blocks:
             - checkout
             - cache restore website-build
             - pwd
-            - 'aws s3 sync "public" "s3://bucket-name" --acl "public-read"'
+            - >-
+              aws s3 sync "~/resume/dist" "s3://williamresume" --acl
+              "public-read"
